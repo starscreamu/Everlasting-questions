@@ -3,6 +3,7 @@ https://habr.com/ru/articles/279969/
 https://datatracker.ietf.org/doc/html/rfc6887
 https://help.keenetic.com/hc/ru/articles/213969189-Служба-UPnP
 https://www.reddit.com/r/HomeNetworking/comments/s9y647/does_upnp_work_on_ip_addresses_under_cgnat/
+https://www.reddit.com/r/HomeNetworking/comments/c1cjur/how_do_i_open_ports_on_my_router_using_pcp/
 
 So, there is no way to connect 2 devices behind CGN without 3rd party tools.
 UPnP won't work because it uses multicast, basically. It doesn't go upstream all the way to ISP router.
