@@ -6,6 +6,9 @@ http://ciscomaster.ru/content/ip-mtu-i-tunneli-ipsec-i-gre
 So, Ethernet Frame is 1518 bytes with 14 bytes header and 4 bytes FCS. Any more than that are Jumbo frames. Or if less than 64 bytes are runt frames.
 Actual payload is 1500, obviously. And 48 when frame is 64.
 TCP has a limit called Maximum Segment Size, or MSS. This is the size of the layer-4 payload (without the IP and TCP headers).
+If you set MTU i.e 1400 for a tunnel, the workstation (Win or Linux machine i.e) doesn't know about the 1400 bytes of the tunnel and sends big packets anyway (1500 by default in most cases). 
+So option is to use Path MTU Discovery (PMTUD).
+
 
 
 ####ENCAPSULATION OVERHEAD####
