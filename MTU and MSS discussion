@@ -3,6 +3,8 @@ https://www.networkworld.com/article/745164/mtu-size-issues.html
 http://ciscomaster.ru/content/ip-mtu-i-tunneli-ipsec-i-gre
 https://www.youtube.com/watch?v=gjOPA7sEvMM&ab_channel=SivakumarNetLabs
 https://support.huawei.com/enterprise/en/knowledge/EKB1000081640  #Huawei explanation 
+http://www.opennet.ru/base/net/pppoe_mtu.txt.html
+https://community.cisco.com/t5/switching/gre-tunnel-default-mtu/td-p/905193
 
 So, Ethernet Frame is 1518 bytes with 14 bytes header and 4 bytes FCS. Any more than that are Jumbo frames. Or if less than 64 bytes are runt frames.
 Actual payload is 1500, obviously. And 48 when frame is 64.
