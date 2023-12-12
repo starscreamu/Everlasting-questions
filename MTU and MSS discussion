@@ -1,6 +1,8 @@
 https://networkdirection.net/articles/network-theory/mtu-and-mss/
 https://www.networkworld.com/article/745164/mtu-size-issues.html
 
+
+
 So, Ethernet Frame is 1518 bytes with 14 bytes header and 4 bytes FCS. Any more than that are Jumbo frames. Or if less than 64 bytes are runt frames.
 Actual payload is 1500, obviously. And 48 when frame is 64.
 TCP has a limit called Maximum Segment Size, or MSS. This is the size of the layer-4 payload (without the IP and TCP headers).
@@ -11,3 +13,6 @@ Okay, why change MTU from 1500 to i.e 1400? Because of the encapsulation overhea
 In PPPoE MTU is 1492 because of 8 bytes of PPP encapsulation. 1500 - 8 = 1492. Simple.
 GRE (IP Protocol 47) (RFC 2784) adds 24 bytes (20 byte IPv4 header, 4 byte GRE header).
 IPsec encryption performed by the DMVPN adds 73 bytes for ESP-AES-256 and ESP-SHA-HMAC overhead.
+
+
+Basically, there's no problem in fragmenting the packet, the problem is to get the packet back together. It needs additional resources.
