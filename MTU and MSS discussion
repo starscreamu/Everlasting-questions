@@ -1,0 +1,4 @@
+https://networkdirection.net/articles/network-theory/mtu-and-mss/
+
+So, Ethernet Frame is 1518 bytes with 14 bytes header and 4 bytes FCS. Any more than that are Jumbo frames. Or if less than 64 bytes are runt frames.
+Actual payload is 1500, obviously
