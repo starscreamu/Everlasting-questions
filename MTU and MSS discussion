@@ -15,10 +15,16 @@ So option is to use Path MTU Discovery (PMTUD).
 
 
 ####ENCAPSULATION OVERHEAD####
-Okay, why change MTU from 1500 to i.e 1400? Because of the encapsulation overhead. PPPoE needs additional 8 bytes. Because IP MTU is 1492 now, so it gives space for a header (IPSec, GRE...).
+Okay, why change MTU from 1500 to i.e 1400? Because of the encapsulation overhead. 
+
+PPPoE needs additional 8 bytes. Because IP MTU is 1492 now, so it gives space for a header for it not get fragmented (IPSec, GRE...).
+
 In PPPoE MTU is 1492 because of 8 bytes of PPP encapsulation. 1500 - 8 = 1492. Simple.
 GRE (IP Protocol 47) (RFC 2784) adds 24 bytes (20 byte IPv4 header, 4 byte GRE header).
 IPsec encryption performed by the DMVPN adds 73 bytes for ESP-AES-256 and ESP-SHA-HMAC overhead.
 
 
 Basically, there's no problem in fragmenting the packet, the problem is to get the packet back together. It needs additional resources.
+
+
+
