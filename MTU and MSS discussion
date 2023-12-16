@@ -29,4 +29,6 @@ IPsec encryption performed by the DMVPN adds 73 bytes for ESP-AES-256 and ESP-SH
 Basically, there's no problem in fragmenting the packet, the problem is to get the packet back together. It needs additional resources.
 
 
-
+#########################
+The reason why you have to adjust MSS is because routers don't look at L4 information when forwarding packets.
+So, if a host with MTU of 1500 sends a packet, it has an MSS of 1460, which exceeds the MSS 1452 the PPPoE can carry. So the packet is dropped.
