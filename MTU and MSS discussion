@@ -37,6 +37,7 @@ IP MTU is 1500. If I put an 8 byte PPPoE HEADER there, the ETH PAYLOAD becomes 1
 Therefore, it exceeds the ETH MTU of 1500 and the PACKET IS DROPPED (because L2 doesn't support fragmentation).
 That is WHY you NEED to set an MTU 1492 to PPPoE connections, so the PACKETS are NOT DROPPED.
 
-#########################
+######################### Regarding MSS
 The reason why you have to adjust MSS is because routers don't look at L4 information when forwarding packets.
 So, if a host with MTU of 1500 sends a packet, it has an MSS of 1460, which exceeds the MSS 1452 the PPPoE can carry. So the packet is dropped or fragmented if the DF bit is not set (It usually is set).
+When a packet goes back from a server (with MTU of 1500 and MSS 1460) to a host, it meets an MTU of 1492 for example, a router tells via PMTUD to lower the MTU value. But there is a router on the path back, that drops ICMP packets (PMTUD ICMP) which creates a PMTUD Black Hole (RFC 2923).
